@@ -1,0 +1,13 @@
+# Editor temp
+*.swp
+*.tmp
+*~
+
+# OS junk
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
