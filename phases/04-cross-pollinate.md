@@ -12,7 +12,7 @@ Emit verbatim:
 ## Hybrid Ideas
 1. **<short label>** — <hybrid idea description, 1-2 sentences> (sources: <Framework A idea #X> + <Framework B idea #Y>)
 2. ...
-[≥5 hybrids]
+[≥5 hybrids TOTAL, including §B force-combined pairs + §C worst-possible-derived insights + §D provocation-derived ideas]
 ```
 
 ## Process
@@ -28,7 +28,7 @@ Before cross-pollinating, compress Phase 3's `## Raw Ideas` into a brief table:
 
 This frees context for Phase 4 + Phase 5 work.
 
-### B. Force-combine pairs (≥5 hybrids)
+### B. Force-combine pairs (≥5 pairs in §B alone — these are the floor, additional hybrids come from §C and §D)
 
 For at least 5 pairs:
 
@@ -41,9 +41,11 @@ The hybrid must produce a NEW property neither parent had alone. If the "hybrid"
 
 ### C. Worst Possible Idea pass
 
+**Skip rule**: If `worst-possible-idea` was among Phase 3's selected frameworks, skip §C entirely — that framework already produced this output. Note the skip in Phase 5's `### Notes` (e.g., "Phase 4 §C skipped because worst-possible-idea was a Phase 3 framework"). Proceed directly to §D.
+
 1. From Phase 3 outputs, list 3 ideas you'd reflexively dismiss as bad.
 2. For each, ask: "What's actually TRUE about this idea? What would have to be different for this to work?"
-3. The insights that emerge become additional hybrid ideas.
+3. The insights that emerge become additional hybrid ideas. Of the 3 dismissed ideas, AT LEAST 1 must yield a numbered entry in `## Hybrid Ideas` (alongside §B force-combined pairs). Mark it with `(from §C)` so Phase 5 can trace lineage.
 
 This is inversion-driven creativity — the dismissed ideas often have a kernel of truth that doesn't show up in "good" ideas.
 
@@ -51,7 +53,13 @@ This is inversion-driven creativity — the dismissed ideas often have a kernel 
 
 1. Pick 1 deliberately absurd statement: "What if [opposite of an obvious assumption]?" or "What if this had to use [completely unrelated domain element — e.g., obstetrics, ant colonies, medieval guilds]?"
 2. Generate 2-3 ideas that flow from the absurd statement, taking it seriously.
-3. Add the surviving (coherent) ones to the hybrid list.
+3. Add the surviving (coherent) ones to the hybrid list, but FIRST emit the provocation's literal text as a labeled block in `## Hybrid Ideas`:
+   ```
+   **Provocation:** "<the absurd statement>"
+   <next-numbered-id>. **<surviving idea label>** — <description, 1-2 sentences> (sources: provocation)
+   <next-numbered-id>. ...
+   ```
+The labeled `**Provocation:**` block is the artifact-level enforcement of anti-mode-collapse mechanism #5. Without it, provocation can be silently skipped (the most common skip mode).
 
 The provocation step is where the truly novel ideas come from. It's also where Claude's mode collapse is loudest — every instinct will say "this is silly, the absurd premise gives nothing useful." Push past it.
 

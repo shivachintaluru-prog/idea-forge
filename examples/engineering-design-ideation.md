@@ -37,9 +37,9 @@ diverge from "fit-the-model" framing.
 ## Phase 3 — Diverge
 
 ```
-**Seed:** 1819 (mod 5 = 4; favorites = EXCLUDED)
+**Seed:** 3470 (mod 5 = 0; favorites_value = 0; favorites = ALLOWED)
 **Selected frameworks:** triz-contradictions [structural], inversion [inversion],
-provocation-po [random-stimulus], slice-and-dice [structural],
+provocation-po [random-stimulus], three-deaths [temporal],
 analogous-domain [semantic — wildcard]
 ```
 
@@ -69,10 +69,14 @@ Inverses:
 - Po: the model is bigger than the planet
   - Idea: hierarchical sharding where most parameters live as compressed lookups (sparse + quantized), only "active" parameters expand
 
-### Slice and Dice (axis: training phase)
-- Warmup phase (first 5%): high entropy gradients; can use lossy intermediate representations
-- Steady-state (middle 90%): predictable patterns; aggressive caching of repeated computations
-- Cool-down (last 5%): convergence-phase; selective high-precision updates only
+### Three Deaths
+Walk a candidate memory-pressure scheme through the three classic death points:
+- **Death 1 (first skeptic)**: "Sub-layer demand-paging will thrash; PCIe latency dominates."
+  - Survival: profile-driven prefetch that consumes gradient-stall windows; the operation is FREE when overlapped with backward pass.
+- **Death 2 (scaling wall)**: works on a single node at 10B params; collapses at 100B with cross-node coherence overhead.
+  - Survival: switch from coherent-cache to log-based reconciliation past a fixed node count — explicitly different mechanism above the threshold.
+- **Death 3 (1.0 → 2.0)**: the scheme is tuned to today's accelerators; next-gen accelerators with different memory hierarchy obsolete the tuning.
+  - Survival: make the policy a learned controller (small RL) rather than a hand-tuned table; re-trains automatically each hardware generation.
 
 ### Analogous Domain (memory in operating systems)
 Properties of OS memory management: virtual memory, demand paging, working sets, NUMA awareness, copy-on-write.
@@ -83,11 +87,11 @@ Properties of OS memory management: virtual memory, demand paging, working sets,
 ## Phase 4 — Cross-pollinate
 
 Hybrids:
-1. **Entropy-Triggered Mode Switch** — TRIZ condition separation + Slice-and-Dice phase decomposition = memory regime switches automatically based on (gradient entropy AND training phase); different policies for warmup vs steady-state vs end-game.
+1. **Entropy-Triggered Mode Switch** — TRIZ condition separation + Three-Deaths Death-3 survival mechanism = a learned controller switches memory regime based on gradient entropy AND adapts across hardware generations.
 2. **Activation Tournament** — Inversion #2 + Analogous Domain working-set = keep only activations whose downstream use was UNPREDICTABLE per the working-set tracker; predictable ones recomputed cheaply.
 3. **Compute-Migrates-to-Activations** — Provocation #1 + TRIZ part/whole = layers migrate to the device where their input activations are largest; transfers are layer code (small) not data (large).
 4. **Sparse-Lookup Backbone** — Provocation #3 + Analogous Domain demand-paging = main weights stored as compressed sparse + quantized lookup; "active" weights are decompressed on-demand into a small working buffer.
-5. **Phase-Specific Precision** — Slice-and-Dice phase + TRIZ time-separation = warmup uses int4; steady-state uses fp8; final 5% uses fp16. Memory profile shifts dynamically.
+5. **Reconciliation-Above-Threshold** — Three-Deaths Death-2 survival + TRIZ space-separation = coherent caching below N nodes, log-based reconciliation above; the regime change is built in by design.
 
 Provocation: "What if memory pressure was the OBJECTIVE, not the constraint?"
 - Memory pressure as a regularizer: training schedules deliberately operate near memory cliff to force activation reuse, generating an implicit regularization signal.
@@ -98,10 +102,11 @@ Provocation: "What if memory pressure was the OBJECTIVE, not the constraint?"
 ## Curated Ideas
 
 ### Direction A — Adaptive Regimes
-1. **Entropy-Triggered Mode Switch** — auto-switching memory regime based on (entropy
-   AND phase). Concrete: a controller that watches gradient stats. [hybrid #1]
-2. **Phase-Specific Precision** — int4 warmup → fp8 steady-state → fp16 cooldown.
-   [hybrid #5]
+1. **Entropy-Triggered Mode Switch** — auto-switching memory regime via a learned
+   controller; gradient stats drive policy and the controller re-trains across
+   hardware generations. [hybrid #1]
+2. **Reconciliation-Above-Threshold** — coherent caching below N nodes; log-based
+   reconciliation above; explicit regime change at the scaling wall. [hybrid #5]
 
 ### Direction B — Working-Set Optimization
 3. **Activation Tournament** — keep only unpredictably-used activations.
@@ -131,7 +136,9 @@ Provocation: "What if memory pressure was the OBJECTIVE, not the constraint?"
 
 ### Notes
 - Reframes most generative: both #1 and #3 contributed.
-- Frameworks contributing most: Provocation-PO and TRIZ Contradictions.
+- Frameworks contributing most: Provocation-PO and TRIZ Contradictions, with
+  Three-Deaths surfacing the cross-generation survival mechanism.
 - Dropped on devil's advocate: "shared address space across nodes" (latency makes
   it dominant by 100×) and "all activations forever" (obviously impossible).
+- Caveats: none from Phase 1 (problem and constraints well-specified).
 ```

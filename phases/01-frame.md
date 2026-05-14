@@ -36,7 +36,7 @@ If the user's prompt is genuinely under-specified (e.g., "ideas for a tagline"),
 - 1 explicit constraint
 - 1 success criterion
 
-If the user refuses to provide more context, frame what was given and proceed; flag the under-specification in the final Phase 5 output.
+If the user refuses to provide more context, frame what was given and proceed. Append a `- Caveats: <description of under-specification>` bullet to Phase 5's `### Notes` template (the artifact already has a Caveats slot). If the user fully specifies, omit the Caveats bullet entirely (no empty placeholders).
 
 ## Anti-mode-collapse for Phase 1
 

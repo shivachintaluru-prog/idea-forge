@@ -1,9 +1,9 @@
 ---
 name: first-principles
 domain-fit: business, product, engineering, research
-constraint-type: structural
-secondary-constraint-type: semantic
-favorites-bias: false
+constraint-type: semantic
+secondary-constraint-type: structural
+favorites-bias: true
 ---
 
 ## When to use

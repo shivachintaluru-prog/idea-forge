@@ -34,16 +34,19 @@ product
 ## Phase 3 — Diverge
 
 ```
-**Seed:** 1432 (mod 5 = 2; favorites = EXCLUDED)
-**Selected frameworks:** false-faces [inversion], think-bubbles [structural],
-brutethink [random-stimulus, word: "monastery"], phase-separation [structural — wildcard]
+**Seed:** 3319 (mod 5 = 4; favorites_value = 3; favorites = EXCLUDED)
+**Selected frameworks:** analogous-domain [semantic], think-bubbles [structural],
+brutethink [random-stimulus, word: "monastery"], false-faces [inversion],
+phase-separation [structural — wildcard]
 ```
 
-### False Faces (assumption reversal)
-1. Reverse "users should be motivated" — users should be DEMOTIVATED at the right times so the rebound creates commitment
-2. Reverse "lessons should fit any time" — lessons must happen at fixed inconvenient times; absence has cost
-3. Reverse "users want progress" — users want PLATEAUS where mastery deepens
-4. Reverse "the app should be available always" — app is unavailable except 1hr/day; scarcity drives ritual
+### Analogous Domain (map to: physical-therapy adherence)
+PT patients also face long-horizon habit programs with high drop-off. Borrowed mechanisms:
+1. Prescription model — a clinician writes the language regimen; the app enforces it (asymmetry of authority)
+2. Re-injury fear — explicit "your previous progress will degrade" warnings before extended absences
+3. Home-exercise logbook — analog journal companion that lives off-screen; daily one-line entries
+4. Discharge ceremony — explicit graduation moment at 12 weeks; alumni status conferred
+5. Insurance-coverage framing — app subsidized by employer wellness budget; opt-out has a cost
 
 ### Think-Bubbles (cross-branch jumps)
 First-order branches: motivation, time, social, identity, memory, environment.
@@ -60,7 +63,13 @@ Properties: silence, ritual, hours, vows, communal meals, copying-as-learning, i
 3. Copying-as-learning: users handwrite a daily passage on paper; app verifies via photo
 4. Illuminated manuscripts: each completed week generates a beautiful artifact-page the user keeps
 
-### Phase Separation
+### False Faces (assumption reversal)
+1. Reverse "users should be motivated" — users should be DEMOTIVATED at the right times so the rebound creates commitment
+2. Reverse "lessons should fit any time" — lessons must happen at fixed inconvenient times; absence has cost
+3. Reverse "users want progress" — users want PLATEAUS where mastery deepens
+4. Reverse "the app should be available always" — app is unavailable except 1hr/day; scarcity drives ritual
+
+### Phase Separation (wildcard)
 Pool A: better streaks, smarter notifications, gamified XP — typical retention features.
 Pool B (asymmetric):
 1. Tuition-style commitment: pay $50 upfront, refunded only if Day-30 retention earned
@@ -76,6 +85,7 @@ Hybrids:
 3. **Sleep-Buddy Pair** — Think-Bubbles' pre-sleep + Phase Separation's buddy = paired users do 5-min pre-sleep lesson via voice; both fall asleep on the call. Trust + adherence loop.
 4. **Productive Demotivation** — False Faces #1 + Phase Separation's pre-commitment = app DELIBERATELY interrupts streaks to test motivation; rebounds count more than streaks.
 5. **Inverse Availability** — False Faces #4 + Brutethink's matins = app open only 5am-6am AND 9pm-10pm. The constraint becomes the ritual.
+6. **Discharge Graduation** — Analogous-Domain's PT discharge ceremony + Think-Bubbles' identity-artifact = explicit 12-week graduation moment with alumni status; identity transition is the retention loop, not the lessons themselves.
 
 Worst Possible Idea pass: "App that aggressively shames users for missing days." Insight: shame fails but ACCOUNTABILITY-AS-CARE works. Legitimate form: someone in the app's community visibly notices when you go quiet and reaches out.
 
@@ -114,8 +124,10 @@ Worst Possible Idea pass: "App that aggressively shames users for missing days."
 
 ### Notes
 - Reframe most generative: #2 (productive friction). Almost all curated ideas trace to it.
-- Frameworks contributing most: Brutethink (monastery), Phase Separation Pool B.
+- Frameworks contributing most: Brutethink (monastery), Phase Separation Pool B,
+  Analogous Domain (PT adherence).
 - Dropped on devil's advocate: "tuition refund if retained" (creates wrong incentive
   for app to make false claims of completion); "auto-language-buddy" (hard to
   algorithmically match well; fails silently).
+- Caveats: none from Phase 1.
 ```

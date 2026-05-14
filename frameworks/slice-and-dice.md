@@ -1,6 +1,6 @@
 ---
 name: slice-and-dice
-domain-fit: business, product, engineering, research
+domain-fit: business, product, engineering, research, creative
 constraint-type: structural
 secondary-constraint-type: temporal
 favorites-bias: false

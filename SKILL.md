@@ -17,7 +17,7 @@ NEVER skip a phase. NEVER apply a single framework. NEVER converge before Phase 
 # Modes
 
 - **Deep (default)**: 5 phases, 4-5 frameworks, ~8-12 turns
-- **`--quick`**: compressed — 1 reframe, 2 frameworks, no Phase 4, ~6 turns
+- **`--quick`**: compressed — 1 reframe, 2 frameworks, no Phase 4, ~6 turns. **Trade-off**: quick mode weakens or removes 4 of the 10 anti-collapse mechanisms (#1 framework variety becomes ≥2 types not ≥3; #5 provocation step removed with Phase 4; #7 reframe gate is single-reframe; #8 cross-pollination skipped). Use only when time-constrained; deep mode preserves the full mission.
 
 # Process
 
@@ -44,8 +44,8 @@ Use the deterministic algorithm in `frameworks/INDEX.md`. Summary:
 
 1. Filter `frameworks/*.md` where `domain-fit` includes the detected domain
 2. Group by `constraint-type`: `{semantic, structural, random-stimulus, inversion, temporal}`
-3. Compute `seed = hash(problem_statement + selected_reframe) mod 2^32`
-4. Exclude `favorites-bias: true` frameworks (SCAMPER, Six Hats, JTBD) UNLESS `seed mod 5 == 0`
+3. Compute seed per the canonical recipe in `frameworks/INDEX.md` Step 3 (first 30 words of problem + first reframe; word_count × 17 + first-letter-ord sum). Record BOTH `seed mod 5` AND `favorites_value = (seed // 13) mod 7`.
+4. Exclude `favorites-bias: true` frameworks (SCAMPER, Six Hats, JTBD, first-principles, inversion, blue-ocean-errc — see catalog) UNLESS `favorites_value == 0` (independent ~14% channel).
 5. Deep: draw 1 from each of 4 distinct constraint-types + 1 wildcard. Quick: draw 1 each from 2 types.
 6. Result must cover ≥3 distinct constraint-types (≥2 in quick).
 
@@ -59,7 +59,7 @@ Use the deterministic algorithm in `frameworks/INDEX.md`. Summary:
 6. Loonshot bias (Phase 5 rewards fragile-but-asymmetric ideas)
 7. Reframe gate (Phase 2 cannot exit without artifact)
 8. Cross-pollination gate (Phase 4 cannot exit in deep mode without artifact)
-9. Anti-favorites bias (SCAMPER / Six Hats / JTBD excluded by default)
+9. Anti-favorites bias (SCAMPER / Six Hats / JTBD / First Principles / Inversion / Blue Ocean ERRC excluded by default)
 10. No idea-killing in early phases (judgment deferred to Phase 5)
 
 Detail with bad-vs-good examples: `references/anti-mode-collapse.md`.
@@ -68,10 +68,14 @@ Detail with bad-vs-good examples: `references/anti-mode-collapse.md`.
 
 | Thought | Reality |
 |---|---|
-| "User just wants quick ideas" | Use `--quick`, but still run all gates. Skipping gates defeats the skill. |
+| "User just wants quick ideas" | Use `--quick`, but understand it materially weakens 4 anti-collapse mechanisms. Confirm the user accepts the trade. Do NOT default to `--quick` for brevity if the user wants 'wonderful' over 'fast'. |
 | "Phase 2 is overkill, the problem is clear" | Reframing is where breakthroughs are born. The exit artifact is required. |
 | "These frameworks all say similar things" | They don't. Apply each by its constraints, not your paraphrase. |
 | "I have enough ideas after Phase 3" | Cross-pollination produces ideas no single framework can. |
 | "User said 'just generate ideas, skip the reframe'" | The skill's value depends on the gates. Honor them or don't invoke this skill. |
 | "I'll pick the 4 frameworks I know best" | Anti-favorites bias is mandatory; let the algorithm pick. |
 | "I can shortcut Phase 1 — the prompt is detailed enough" | The Domain tag is required for selection. Emit the artifact. |
+
+# Sub-agent usage (optional)
+
+For Phase 3 framework application, you MAY dispatch sub-agents in parallel — one per selected framework. Each sub-agent receives: the framework file path, the problem statement, the selected reframe, and the framework's anti-mode-collapse prompts. It returns 5-10 ideas. The orchestrator concatenates results into `## Raw Ideas`. This reduces context pressure and produces more independent application of each framework's constraints. Not required, but recommended when running deep mode with the full 5-framework variety.

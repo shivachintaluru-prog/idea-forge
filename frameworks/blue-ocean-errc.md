@@ -3,7 +3,7 @@ name: blue-ocean-errc
 domain-fit: business, product
 constraint-type: semantic
 secondary-constraint-type: inversion
-favorites-bias: false
+favorites-bias: true
 ---
 
 ## When to use

@@ -37,9 +37,11 @@ construction.
 ## Phase 3 — Diverge
 
 ```
-**Seed:** 1271 (mod 5 = 1; favorites = EXCLUDED)
+**Seed:** 3347 (mod 5 = 2; favorites_value = 5; favorites = EXCLUDED)
 **Selected frameworks:** hall-of-fame [semantic], brutethink [random-stimulus, word: "compost"],
-inversion [inversion], three-bs [temporal — wildcard], think-bubbles [structural]
+three-bs [temporal], think-bubbles [structural], false-faces [inversion — wildcard]
+(Type-drop: mod 5 = 2 → random-stimulus → Step 5b rotation (floor violation) → drop inversion;
+false-faces fills the wildcard from the dropped bucket.)
 ```
 
 ### Hall of Fame
@@ -57,20 +59,13 @@ Properties: decay, layering, microbial activity, finished product, smell, time, 
 3. Microbial activity: the robot's ethics emerge not from its programming but from the bacterial colonies that have grown in its hollow joints — accidental sentience via neglect
 4. Smell: the visceral; a smell-centered narrative where what makes the robot human is its smell after years of co-habitation
 
-### Inversion
-"How would we GUARANTEE the worst possible robot-ethics short story?"
-- Make it heavy-handed; have characters say the moral aloud
-- Use established tropes uncritically
-- Set in a future-Tokyo-with-neon
-- Include a sentient robot who explicitly questions its servitude
-- Have a tragic ending where someone learns a lesson
-
-Inverses (idea pool):
-1. The moral never spoken; only acted
-2. Trope INVERSION as the core mechanic — the robot is what we expected the human to be
-3. Setting in a deeply mundane place (a Phoenix retirement community; a Kentucky truck stop)
-4. The robot DOESN'T question its servitude; it's the human who is uneasy
-5. Open-ended ending; no lesson learned; just consequence
+### False Faces (assumption reversal)
+Surface the genre's load-bearing assumptions and reverse each:
+1. Reverse "the moral is spoken" → the moral is never spoken; only acted; the reader has to do the ethical work
+2. Reverse "the robot is the alien element" → the robot is the most familiar thing in the room; the human is the alien element
+3. Reverse "robot-ethics happens in cyberpunk settings" → setting is deeply mundane (Phoenix retirement community; Kentucky truck stop); cyberpunk register banned
+4. Reverse "the robot questions its servitude" → the robot is at peace; the human is uneasy
+5. Reverse "tragic ending where someone learns a lesson" → open-ended; no lesson learned; just consequence
 
 ### Three Bs
 After loading the prompt for 15 min, walked. Captured ideas:
@@ -91,7 +86,7 @@ Hybrids:
 1. **The Composted Repair-Couple** — Brutethink #1 + Three-Bs #3 = a married pair of robot-repair workers who argue about a unit returned too many times; their resolution involves a quiet ceremony of "composting" the unit in their backyard. Domestic ethics.
 2. **HOA Auctioneer's Lot** — Three-Bs #2 + Think-Bubbles #3 = an HOA dispute about a robot leads to an estate-sale auction where warranty transfer reveals decades of micro-rationalizations across owners.
 3. **Babitz-on-Bourbon** — Hall-of-Fame Eve Babitz + Brutethink "smell" = three women in an LA building who all own the same robot model; one of them finally smells him and realizes he's been with her longer than her dead husband.
-4. **Chuang Tzu in Phoenix** — Hall-of-Fame Chuang Tzu + Inversion "deeply mundane setting" = a 78-year-old woman in a Phoenix retirement community has dreams she doesn't fully understand; her caretaker is a robot. The ethical question is whose dreams these are.
+4. **Chuang Tzu in Phoenix** — Hall-of-Fame Chuang Tzu + False-Faces #3 "deeply mundane setting" = a 78-year-old woman in a Phoenix retirement community has dreams she doesn't fully understand; her caretaker is a robot. The ethical question is whose dreams these are.
 5. **Maintenance-Layered Storm** — Brutethink "layering" + Hall-of-Fame Octavia Butler = same robot, three owners across 50 years, told from the perspective of the maintenance worker who serviced him for all three. The maintenance worker is the moral compass.
 
 Provocation: "What if the story has no robot in it at all, only its absence?"
@@ -141,7 +136,8 @@ Provocation: "What if the story has no robot in it at all, only its absence?"
 ### Notes
 - Reframe most generative: #1 (boring ethics) — explicitly trope-resistant.
 - Frameworks contributing most: Hall of Fame and Brutethink.
-- Dropped on devil's advocate: "robot questions servitude" arc (Inversion #4
-  pointed AWAY from this trope; we honored the inverse) and "future-Tokyo-with-neon"
-  (deliberately rejected as cliché trigger).
+- Dropped on devil's advocate: "robot questions servitude" arc (False-Faces #4
+  pointed AWAY from this trope; we honored the reversal) and "future-Tokyo-with-neon"
+  (deliberately rejected as cliché trigger, per False-Faces #3).
+- Caveats: none from Phase 1 (length, voice, and trope-avoidance well-specified).
 ```

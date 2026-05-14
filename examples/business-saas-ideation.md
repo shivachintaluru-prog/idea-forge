@@ -38,18 +38,20 @@ business
 ## Phase 3 — Diverge
 
 ```
-**Seed:** 2225 (mod 5 = 0; favorites = ALLOWED)
-**Selected frameworks:** jtbd [semantic], phase-separation [structural],
-brutethink [random-stimulus, word: "nightclub"], worst-possible-idea [inversion],
-false-fail-test [temporal — wildcard]
+**Seed:** 3290 (mod 5 = 0; favorites_value = 1; favorites = EXCLUDED)
+**Selected frameworks:** phase-separation [structural], brutethink [random-stimulus, word: "nightclub"],
+worst-possible-idea [inversion], critical-mass [temporal],
+hall-of-fame [semantic — wildcard]
+(Type-drop: mod 5 = 0 → drop semantic from primaries; hall-of-fame fills the wildcard slot from the dropped bucket.)
 ```
 
-### JTBD
-1. SBO wants to feel they earned the dollar — AI publishes a monthly professionalism score
-2. SBO wants peers to see them as well-run — shared admin-quality leaderboard within trade associations
-3. SBO wants to look "established" — AI generates polished correspondence templates branded as the SBO's "team"
-4. SBO wants control without effort — admin tasks delegated but with explicit oversight surface
-5. SBO wants to leave admin behind on Friday — AI bundles a week's admin into a 20-min Friday review session
+### Hall of Fame
+Borrowed perspectives applied to SBO admin overhead:
+1. **A 1920s Vaudeville booking agent**: AI as a chatty agent who handles the unglamorous logistics so the SBO performs only the parts they want to be seen doing
+2. **Mary Kay Ash (status-as-product)**: AI surfaces the SBO's accomplishments to their own peer network — public progress, pink-cadillac for plumbers
+3. **A Michelin inspector**: AI silently audits SBO administrative discipline and offers anonymous tier badges that customers can verify
+4. **A 1960s union organizer**: AI helps adjacent SBOs aggregate purchasing and customer pipelines without anyone having to attend a meeting
+5. **A modern concierge doctor**: subscription premium tier where the SBO outsources the "annoying" admin to a human-AI hybrid and brands it as white-glove service
 
 ### Phase Separation
 Pool A (feasibility): invoice automation, scheduling bots, tax-prep helper.
@@ -70,18 +72,19 @@ Properties: door policy, exclusivity, queues, DJ as taste-maker, late hours, dan
 Terrible: "An AI that does the SBO's job worse than they would, but with more confidence."
 Insight: SBOs would pay for the APPEARANCE of having a digital front-of-house. Legitimate form: AI generates consistent multi-persona customer comms (a "team" voice for a sole proprietor).
 
-### False Fail Test
-Graveyard: "Subscription invoicing tools for SBOs"
-- Wrong context: prior attempts marketed lower fees; actual driver is administrative dignity
-- Resurrected: branded as PRESTIGE tools (e.g., "what plumbers with a 5-year waitlist use"), price as premium
+### Critical Mass (wildcard)
+Threshold dynamics for SBO AI products:
+- Sub-threshold (only works for 1-3-person shops): AI as a "co-founder voice" — heavy personalization that breaks above ~10 employees because the voice flattens
+- Trans-threshold (designed to survive growth): AI-managed apprenticeship pipeline — SBO trains the apprentice via AI prompts; system absorbs the scale transition from solo → 1+1 → small team
+- Above-threshold-only (requires aggregation): cross-SBO benchmarking — "your invoices are 23% slower than the trade median" only works once thousands of SBOs are on the system
 
 ## Phase 4 — Cross-pollinate
 
 Hybrids:
 1. **Status Co-op** — Phase Separation's peer co-op + Brutethink's door policy = peer-vetted SBO admin guild. Members trade admin hours, vetted by reputation.
-2. **Public Admin Diary** — JTBD's professionalism score + Worst-Possible's "team appearance" = AI-curated public admin diary that doubles as marketing collateral.
-3. **Premium Queue** — Brutethink's door policy + False-Fail's premium positioning = AI vets incoming work, forwards only "premium-tier" jobs; branded as exclusivity service.
-4. **Co-op Rotation Service** — Phase Separation pool B + JTBD shared leaderboard = paired evening-hours admin coverage rated publicly within the guild.
+2. **Public Admin Diary** — Hall-of-Fame's vaudeville agent + Worst-Possible's "team appearance" = AI-curated public admin diary that doubles as marketing collateral.
+3. **Premium Queue** — Brutethink's door policy + Hall-of-Fame's Michelin inspector = AI vets incoming work, forwards only "premium-tier" jobs; SBO publishes an anonymous tier badge.
+4. **Apprentice-Bound Service Tier** — Phase Separation pool B + Critical-Mass trans-threshold = AI bundles SBO admin into an apprenticeship interface; designed to survive the solo → small-team transition.
 5. **Reverse Onboarding "Junior Staff"** — Worst-Possible team appearance + Phase Separation = AI presents as the SBO's apprentice in customer comms, freeing perceived time without changing what the SBO does.
 
 Provocation ("What if SBO admin was a SOCIAL EVENT?"):
@@ -104,8 +107,9 @@ Provocation ("What if SBO admin was a SOCIAL EVENT?"):
 3. **Status Co-op** — peer-vetted SBO admin guild trading time.
    Rationale: addresses time-poverty without "outsource to strangers" failure mode.
    [source: hybrid #1]
-4. **Co-op Rotation Service** — paired evening-hours admin coverage.
-   Rationale: covers a specific pain (after-hours messaging) with peer trust.
+4. **Apprentice-Bound Service Tier** — admin bundle delivered through an apprentice
+   interface; survives solo → small-team transition.
+   Rationale: addresses the Year-3 scaling cliff by absorbing it into product design.
    [source: hybrid #4]
 
 ### Direction C — Lifecycle Targeted
@@ -134,4 +138,5 @@ Provocation ("What if SBO admin was a SOCIAL EVENT?"):
 - Frameworks contributing most: Brutethink (random-stimulus jolt) + Phase Separation.
 - Dropped on devil's advocate: a "subscription invoicing" reskin (no differentiation)
   and a "shared receipt" concept (legal complexity).
+- Caveats: none from Phase 1 (segment, pain point, and timeline well-specified).
 ```

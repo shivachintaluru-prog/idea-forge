@@ -3,7 +3,7 @@ name: inversion
 domain-fit: business, product, engineering, research, creative
 constraint-type: inversion
 secondary-constraint-type: structural
-favorites-bias: false
+favorites-bias: true
 ---
 
 ## When to use

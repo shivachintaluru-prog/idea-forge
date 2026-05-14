@@ -19,6 +19,12 @@ Phase 1 must emit a single-word `Domain` tag. The selection algorithm in `framew
 2. If the problem spans 2 domains roughly equally (e.g., "design a B2B product"), pick the domain that the USER's role/intent suggests. Example: "I'm a PM trying to ship X" → product. "I'm a founder trying to position X" → business.
 3. If the problem genuinely doesn't fit any 5 (e.g., "ideas for my wedding speech," "how should I structure my personal finances") → tag as `other`. The selection algorithm uses the full framework set with no domain filter.
 
+**Tie-break rule**: if domain signals are evenly split between two or more candidate domains, alphabetize the candidates and pick the FIRST. This preserves determinism upstream of the seed math.
+
+Examples:
+- Signals split between `business` and `product` → pick `business` (alphabetical).
+- Signals split between `engineering`, `product`, `research` → pick `engineering` (alphabetical).
+
 ## What the tag does
 
 - Filters `frameworks/*.md` where `domain-fit` lacks the tag.

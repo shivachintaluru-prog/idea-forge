@@ -46,7 +46,7 @@ Output includes ≥2 "loonshot candidates" — fragile-but-asymmetric ideas that
 - **inversion**: False Faces, False Fail Test, Inversion, Worst Possible Idea
 - **temporal**: Three B's, Three Deaths, Critical Mass
 
-The selection algorithm picks 4-5 (deep) or 2 (quick) frameworks per session, biased away from the most-trained-on three (SCAMPER, Six Hats, JTBD) by default — those only appear when `seed mod 5 == 0`.
+The selection algorithm picks 4-5 (deep) or 2 (quick) frameworks per session, biased away from the most-trained-on frameworks (SCAMPER, Six Hats, JTBD, First Principles, Inversion, Blue Ocean ERRC) by default — those only appear in approximately 1-in-7 sessions (an independent hash channel: `(seed // 13) mod 7 == 0`). The skill is designed to produce materially more diverse ideas than baseline Claude ideation, especially across constraint-types.
 
 ## Distinction from `superpowers:brainstorming`
 

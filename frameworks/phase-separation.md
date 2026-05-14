@@ -1,10 +1,12 @@
 ---
 name: phase-separation
-domain-fit: business, product, engineering, research
+domain-fit: business, product, engineering, research, creative
 constraint-type: structural
 secondary-constraint-type: inversion
 favorites-bias: false
 ---
+
+> Note: This is **pool separation** (fragile-but-asymmetric vs stable), NOT temporal phase decomposition. For time-axis decomposition see `slice-and-dice` or `three-deaths`.
 
 ## When to use
 A single judgment lens (usually "feasibility") is dominating ideation. Phase Separation forces you to generate two parallel idea pools optimized for opposite criteria — feasibility AND asymmetric upside — then cross-evaluate. Many high-value ideas live in one pool but get dismissed when only the other pool's lens is applied.

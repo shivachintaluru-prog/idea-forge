@@ -1,6 +1,6 @@
 ---
 name: three-deaths
-domain-fit: business, product, engineering
+domain-fit: business, product, engineering, creative
 constraint-type: temporal
 secondary-constraint-type: structural
 favorites-bias: false

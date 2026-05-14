@@ -53,3 +53,7 @@ These are the LOONSHOT candidates. ≥2 must appear (≥1 in quick). They are ex
 - Do NOT silently exclude ideas with novelty 5 because "they're too weird." The skill is explicitly weird-tolerant.
 - Do NOT inflate novelty scores to feel productive. Score honestly; if all ideas are novelty 2-3, Phase 3 was convergent — return and add a `random-stimulus` framework.
 - Loonshot ideas that look "obviously bad" should still be tagged if they pass the criteria above. The False Fail check (in Phase 5) reframes the apparent badness.
+
+---
+
+Phase 5 (`phases/05-surface.md`) is the consumer of this file. It MUST read this before scoring. The canonical formula is repeated in `phases/05-surface.md` §0.

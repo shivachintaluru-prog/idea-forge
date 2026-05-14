@@ -37,10 +37,12 @@ publishable result.
 ## Phase 3 — Diverge
 
 ```
-**Seed:** 1656 (mod 5 = 1; favorites = EXCLUDED)
+**Seed:** 3453 (mod 5 = 3; favorites_value = 6; favorites = EXCLUDED)
 **Selected frameworks:** morphological-analysis [structural], analogous-domain [semantic],
-random-stimulation [random-stimulus, profession: "1920s switchman"], false-fail-test [inversion],
-phoenix [structural — wildcard]
+random-stimulation [random-stimulus, profession: "1920s switchman"], critical-mass [temporal],
+false-fail-test [inversion — wildcard]
+(Type-drop: mod 5 = 3 → drop inversion from primaries; false-fail-test fills the wildcard
+from the dropped bucket.)
 ```
 
 ### Morphological Analysis
@@ -72,20 +74,20 @@ Graveyard: "Diversity metrics for LLM outputs (BLEU, distinct-n)"
 - Wrong context: BLEU was designed for translation, not free generation; distinct-n misses semantic equivalence
 - Resurrected: domain-specific diversity metrics calibrated against TASK SUCCESS, not literal token variety
 
-### Phoenix Questions
-- Why is mode collapse hard to measure? Variance hides; aggregated metrics smooth it out.
-- Why hasn't it been solved? Each measurement framework requires task-specific setup; no general framework.
-- 100× budget? Hire 100 evaluators full-time per deployment; impossible to scale, but valuable as upper-bound benchmark.
-- 1/100× budget? A single LLM as judge over a few hundred deployment samples per week; cheap baseline.
+### Critical Mass (wildcard)
+Threshold dynamics for mode-collapse measurement methodologies:
+- **Sub-threshold (works only on single-deployment scale)**: hand-curated benchmark with hand-labeled outputs; valuable for one deployment, dies above 5-10 deployments because labor doesn't scale.
+- **Trans-threshold (designed to survive consolidation)**: methodology that explicitly defines a compatibility layer for switching evaluators (human → LLM-judge → automated) at known transition points; mechanism = pinned compatibility checkpoints.
+- **Above-threshold-only (requires deployment-scale)**: fleet-wide drift detection that only produces signal once you have thousands of deployments contributing data; statistical pooling is the mechanism.
 
 ## Phase 4 — Cross-pollinate
 
 Hybrids:
 1. **Junction-Level Drift Audit** — Random-Stimulation's per-junction tracking + Morphological Analysis's session scope = measure mode collapse per (deployment-context × prompt-class × week); detect drift rather than aggregate.
-2. **Adversarial Synthetic Cohort** — Morphological Analysis #1 + Phoenix's 100× budget upper-bound = synthetic-customer cohort with adversarial probes, run continuously; cost-bounded to ~1% of deployment compute.
+2. **Adversarial Synthetic Cohort** — Morphological Analysis #1 + Critical-Mass above-threshold-only = synthetic-customer cohort with adversarial probes, run continuously across thousands of deployments; cost-bounded to ~1% of deployment compute via fleet pooling.
 3. **Ecological Diversity Audit** — Analogous Domain Shannon index + False-Fail metric resurrection = a domain-calibrated Shannon-Wiener variant tied to task-success outcomes, not raw token variety.
 4. **Forced-Sampling Trigger** — Random-Stimulation's interlocking + Morphological Analysis = when a deployment detects a "collapse event," it FORCES a sample of alternative outputs (re-sampling at higher temperature) and measures user preference between current and alternative.
-5. **Paper-Log Longitudinal Method** — Random-Stimulation's daily diff + Phoenix's frugal-budget framing = a stable 100-prompt benchmark run daily across deployments, diff'd over time; cheap, longitudinal, defensible.
+5. **Compatibility-Checkpointed Benchmark** — Random-Stimulation's daily diff + Critical-Mass trans-threshold = a stable 100-prompt benchmark with pinned evaluator-compatibility points so the methodology survives the human → LLM-judge transition; cheap, longitudinal, defensible.
 
 Provocation: "What if we ran two deployments in parallel and measured user preference?"
 - A/B with deliberately divergent (high-temperature, framework-prompted) variant; user preference is the ground truth measure of mode collapse cost.
@@ -98,8 +100,8 @@ Provocation: "What if we ran two deployments in parallel and measured user prefe
 ### Direction A — Longitudinal Drift Detection
 1. **Junction-Level Drift Audit** — per (context × prompt-class × time) measurement.
    [hybrid #1]
-2. **Paper-Log Longitudinal Method** — daily diff of stable prompt set; cheap.
-   [hybrid #5]
+2. **Compatibility-Checkpointed Benchmark** — daily diff of stable prompt set with
+   pinned evaluator-compatibility points across human/LLM-judge transitions. [hybrid #5]
 
 ### Direction B — Outcome-Tied Metrics
 3. **Ecological Diversity Audit** — Shannon-Wiener calibrated to task success.
@@ -131,7 +133,9 @@ Provocation: "What if we ran two deployments in parallel and measured user prefe
 
 ### Notes
 - Reframe most generative: #2 (task-class decomposition).
-- Frameworks contributing most: Random-Stimulation and Morphological Analysis.
+- Frameworks contributing most: Random-Stimulation, Morphological Analysis,
+  and Critical-Mass (surfaced the fleet-pooling and compatibility-checkpoint moves).
 - Dropped on devil's advocate: "100 human evaluators full-time" (cost prohibitive
   except as benchmark) and "BLEU/distinct-n adoption" (we already know these fail).
+- Caveats: none from Phase 1.
 ```

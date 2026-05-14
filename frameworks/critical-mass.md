@@ -1,6 +1,6 @@
 ---
 name: critical-mass
-domain-fit: business, product, research
+domain-fit: business, product, research, creative
 constraint-type: temporal
 secondary-constraint-type: structural
 favorites-bias: false
